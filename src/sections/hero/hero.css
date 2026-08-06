@@ -1,9 +1,29 @@
 #hero {
+  position: relative;
   min-height: 100svh;
-  background-color: var(--rtc-bgColor);
   padding: var(--rtc-padding-m);
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-image: url('/icons/coding.png');
+  background-size: 50px;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: color-mix(in srgb, var(--rtc-bgColor) 85%, transparent);
+  z-index: 1;
+}
+
+#hero .textDiv,
+#hero img.profilePic,
+#hero button.downSection {
+  z-index: 2;
+  text-shadow: 2px 2px 1px rgba(253, 253, 253, 0.3);
 }
 
 #hero .textDiv {
@@ -23,6 +43,7 @@
   color: var(--rtc-color-2);
   background-color: var(--rtc-textColorHighlight);
   box-shadow: 10px 10px 1px 1px var(--rtc-color-3);
+  text-shadow: none;
 }
 
 #hero h3 {
@@ -39,67 +60,61 @@
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--rtc-color-2);
-  box-shadow: 0 0 10px 1px #00000065;
+  box-shadow: 0 0 10px 1px rgba(8, 8, 8, 0.75);
 }
 
 /* MOBILE */
 
 @media (max-width: 1500px) {
   #hero h1 {
-  font-size: 5rem;
+    font-size: 5rem;
+  }
 }
-}
-
 
 @media (max-width: 1000px) {
   #hero {
-  flex-direction: column;
-  padding: var(--rtc-padding-3xl);
-  gap: var(--rtc-gap-xl);
-}
+    flex-direction: column;
+    padding: var(--rtc-padding-3xl);
+    gap: var(--rtc-gap-xl);
+  }
 
   #hero .profilePic {
-  order: 1;
-  width: 350px;
-  height: 350px;
-}
-
-  #hero .textDiv {
-  order: 2;
-  width: 100%;
-  text-align: center;
-}
-
-}
-
-
- @media (max-width: 650px) {
-  #hero {
-  padding: var(--rtc-padding-xl) var(--rtc-padding-m);
-  gap: 0;
+    order: 1;
+    width: 350px;
+    height: 350px;
   }
 
   #hero .textDiv {
-  gap: var(--rtc-gap-xs);
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
 }
 
+@media (max-width: 650px) {
+  #hero {
+    padding: var(--rtc-padding-xl) var(--rtc-padding-m);
+    gap: 0;
+  }
+
+  #hero .textDiv {
+    gap: var(--rtc-gap-xs);
+  }
+
   #hero h1 {
-  font-size: 3rem;
+    font-size: 3rem;
   }
 
   #hero h3 {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   #hero h4 {
-  font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   #hero .profilePic {
-  width: 250px;
-  height: 250px;
+    width: 250px;
+    height: 250px;
   }
 }
-
-
-
