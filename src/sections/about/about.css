@@ -43,6 +43,7 @@
   height: 100px;
   display: flex;
   justify-content: center;
+
   align-items: center;
   box-shadow: 1px 3px 8px var(--rtc-bgColor);
 
@@ -62,6 +63,7 @@
   font-weight: 600;
   color: var(--rtc-bgColor);
   cursor: default;
+  text-align: center;
 }
 
 .skillItem:hover img {
