@@ -10,20 +10,20 @@
 
 #about h2 {
   color: var(--rtc-textColorInverted);
+  padding-bottom: 10px;
 }
 
 #about .skillsDiv h2 {
   font-size: 1.5rem;
-  padding-bottom: 10px;
   background-image: url('/icons/angry-underline.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-clip: padding-box;
-  background-position: 100px 27px;
-  background-size: 70px;
+  background-position: 103px 27px;
+  background-size: 60px;
 }
 
-#about p {
+.aboutDiv p {
   color: var(--rtc-textColorInverted);
   width: 60%;
   font-size: 1.3rem;
@@ -49,7 +49,8 @@
 }
 
 .skillsDiv h2 {
-  padding: 0 var(--rtc-padding-3xl);
+  padding-left: var(--rtc-padding-3xl);
+  width: fit-content;
 }
 
 .skillsList {
@@ -120,10 +121,10 @@
   display: block;
 }
 
-/* MOBILE */
-
-@media (max-width: 1500px) {
-  .aboutDiv {
+/*!  MEDIA  */
+@media (max-width: 1800px) {
+  /* DESKTOP or less */
+  .aboutDiv p {
     width: 100%;
   }
 
@@ -132,30 +133,49 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
+  /* LAPTOP - TABLET or less */
   #about {
     text-align: center;
-  }
-
-  .aboutDiv {
-    width: 100%;
-  }
-
-  .skillsDiv {
-    width: 100%;
-  }
-
-  #about {
     padding: var(--rtc-padding-xl) 0;
+    gap: var(--rtc-gap-m);
   }
 
   #about h2 {
     color: var(--rtc-textColorInverted);
     font-size: 1.8rem;
+    padding-bottom: 10px;
   }
 
-  #about p {
+  #about .aboutDiv {
+    flex: 3;
+    padding: 0 var(--rtc-padding-l);
+  }
+
+  #about .skillsDiv {
+    flex: 2;
+    align-items: center;
+  }
+
+  #about .skillsDiv h2 {
+    padding-left: 0;
+    background-position: 2px 27px;
+    background-size: 60px;
+  }
+
+  .aboutDiv p {
     color: var(--rtc-textColorInverted);
     font-size: 1.3rem;
   }
+}
+
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
+  #about .skillsDiv {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
 }

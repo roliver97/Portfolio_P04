@@ -70,6 +70,13 @@
 
 html {
   font-size: 16px; /* 1rem = 16px */
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100svh;
+  scroll-snap-align: start;
 }
 
 input,
@@ -144,10 +151,6 @@ input {
   font-family: var(--font-sans);
 }
 
-section {
-  height: 100svh;
-}
-
 .flex-container {
   display: flex;
   justify-content: space-between;
@@ -190,10 +193,6 @@ section {
 
 @media (max-width: 769px) {
   /* SMALL TABLET or less */
-}
-
-@media (max-width: 480px) {
-  /* MOBILE or less */
   html {
     font-size: 14px; /* 1rem = 14px */
   }
@@ -202,4 +201,8 @@ section {
   select {
     font-size: 16px !important; /* mantenemos 16px para los inputs ya que iOS fuerza un zoom automático si algun input tiene un font-size inferior a 16px */
   }
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
 }
