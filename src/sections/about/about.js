@@ -26,8 +26,8 @@ const templateAbout = () => {
   const paragraph = document.createElement('p')
 
   aboutTitle.textContent = 'About me'
-  paragraph.textContent =
-    'I’m a web development apprentice, enjoying the process of building websites that are both practical and user-friendly.'
+  paragraph.innerHTML = `Hi there! I'm Romà, and I like to create things. <br><br>
+    As a junior web development apprentice, I'm passionate about building practical, visually appealing, and responsive web applications from the ground up. I approach every project with a meticulous and organized mindset, focusing on clean architectures and intuitive code designed for readability and collaboration. Whether it's crafting polished user interfaces on the client side or developing secure REST APIs on the backend, I am deeply detail-oriented—thoroughly anticipating edge cases before solving problems—and I love the entire process of bringing robust, well-thought-out projects to life.`
 
   aboutDiv.appendChild(aboutTitle)
   aboutDiv.appendChild(paragraph)
@@ -58,7 +58,7 @@ const templateAbout = () => {
     },
     {
       name: 'Express JS',
-      img: import.meta.env.BASE_URL + 'icons/skills/expressjs.webp'
+      img: import.meta.env.BASE_URL + 'icons/skills/expressjs.png'
     },
     {
       name: 'Puppeteer',
@@ -82,7 +82,10 @@ const templateAbout = () => {
     }
   ]
 
-  skills.forEach((skill) => {
+  // Duplicated array for an infinite scrolling effect
+  const duplicatedSkills = [...skills, ...skills, ...skills, ...skills]
+
+  duplicatedSkills.forEach((skill) => {
     const li = document.createElement('li')
     li.classList.add('skillItem')
     const img = document.createElement('img')

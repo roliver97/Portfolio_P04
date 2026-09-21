@@ -45,7 +45,7 @@
   border-radius: var(--rtc-card-border-radius);
 }
 
-.interestBtn.active { 
+.interestBtn.active {
   background-color: var(--rtc-color-3);
   border: 2px solid var(--rtc-color-4);
 }
@@ -75,7 +75,6 @@
 
 .contactForm input {
   height: 50px;
-
 }
 
 .contactForm textarea {
@@ -88,7 +87,11 @@
   padding: var(--rtc-padding-m);
   border: 2px solid var(--rtc-color-1);
   background-color: var(--rtc-color-4);
-  background: linear-gradient(340deg,rgba(149, 205, 216, 1) 0%, rgba(255, 255, 255, 1) 32%);
+  background: linear-gradient(
+    340deg,
+    rgba(149, 205, 216, 1) 0%,
+    rgba(255, 255, 255, 1) 32%
+  );
   border-radius: 10px;
   font-weight: 500;
 }
@@ -132,19 +135,24 @@
 }
 
 .contactLinksList img {
-  width: 50px;
+  width: 40px;
 }
 
-@media (max-width: 1500px) { 
+.contactLinksList li:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
 
-  #interestsContainer, #formContainer, .contactForm {
+@media (max-width: 1500px) {
+  #interestsContainer,
+  #formContainer,
+  .contactForm {
     padding: 0;
     font-size: 1.8rem;
     gap: var(--rtc-gap-l);
     justify-content: center;
     text-align: center;
   }
-
 
   .interestBtn {
     padding: var(--rtc-padding-xs);
@@ -154,26 +162,28 @@
     font-weight: 500;
   }
 
-  .contactForm input, .contactForm textarea {
+  .contactForm input,
+  .contactForm textarea {
     font-size: 0.75rem;
-   }
+  }
 }
 
-@media (max-width: 1000px) { 
-  
+@media (max-width: 1000px) {
   #contactSection {
-  padding: var(--rtc-padding-xl) var(--rtc-padding-m);
+    padding: var(--rtc-padding-xl) var(--rtc-padding-m);
   }
 
-  #interestsContainer, #formContainer {
+  #interestsContainer,
+  #formContainer {
     font-size: 1rem;
     width: 47%;
   }
 
-  .contactForm input, .contactForm textarea {
+  .contactForm input,
+  .contactForm textarea {
     font-size: 0.7rem;
     padding: var(--rtc-padding-s);
-   }
+  }
 
   .buttonsContainer {
     gap: var(--rtc-gap-s);
@@ -184,20 +194,20 @@
   }
 
   #formSubmitButton {
-  gap: var(--rtc-gap-s);
-  font-size: 0.8rem;
-  font-weight: 500;
+    gap: var(--rtc-gap-s);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 }
 
-}
-
-@media (max-width: 500px) { 
-    .contactForm input, .contactForm textarea {
+@media (max-width: 500px) {
+  .contactForm input,
+  .contactForm textarea {
     font-size: 0.5rem;
     padding: var(--rtc-padding-xs);
-   }
+  }
 
-   .contactLinksList {
+  .contactLinksList {
     gap: var(--rtc-gap-m);
-   }
+  }
 }

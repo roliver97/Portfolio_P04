@@ -14,16 +14,28 @@
 }
 
 .experienceButton {
-  font-size: 2.6rem;
+  font-size: 2rem;
+  width: 200px;
   background-color: var(--rtc-bgColor);
   border: none;
   font-weight: 500;
   cursor: pointer;
+  padding-bottom: 25px;
 }
 
 .experienceButton:hover {
- 
-  color: var(--rtc-textColorHighlight);
+  color: var(--rtc-color-4);
+}
+
+.experienceButton.active {
+  color: var(--rtc-color-4);
+
+  background-image: url('/icons/angry-underline.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-clip: padding-box;
+  background-position: 50% 35px;
+  background-size: 180px;
 }
 
 #experienceContainer {
@@ -34,7 +46,8 @@
   height: 100%;
 }
 
-#experienceDiv, #studiesDiv {
+#experienceDiv,
+#studiesDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,17 +58,21 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  transition: transform 1s ease, opacity 0.5s ease;
+  transition:
+    transform 1s ease,
+    opacity 0.5s ease;
 }
 
-#experienceDiv ul, #studiesDiv ul{
+#experienceDiv ul,
+#studiesDiv ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
 }
 
-#experienceDiv li, #studiesDiv li{
+#experienceDiv li,
+#studiesDiv li {
   display: flex;
   flex-direction: column;
   gap: var(--rtc-gap-m);
@@ -64,7 +81,6 @@
 #experienceContainer h4 {
   color: var(--rtc-textColorHighlight);
 }
-
 
 #experienceDiv.experience-hidden,
 #studiesDiv.studies-hidden {
@@ -85,40 +101,34 @@
   transform: translateX(0);
 }
 
-.studiesPlaceAndPeriod, .jobsPlaceAndPeriod {
-  font-size: 1.3rem;
-}
-
 @media (max-width: 1200px) {
   .experienceButton {
-  font-size: 2.2rem;
+    font-size: 2.2rem;
   }
   #experienceContainer {
-  font-size: 1.5rem;
-  height: 75%;
+    font-size: 1.5rem;
+    height: 75%;
   }
 }
 
 @media (max-width: 1000px) {
-
-  #experienceSection{
-     padding: var(--rtc-padding-xl) var(--rtc-padding-m); 
-     
+  #experienceSection {
+    padding: var(--rtc-padding-xl) var(--rtc-padding-m);
   }
 
   #experienceHeader {
-  gap: var(--rtc-gap-s);
-}
+    gap: var(--rtc-gap-s);
+  }
 
   .experienceButton {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
   }
-  #experienceContainer  {
-  font-size: 1rem;
-  }
-
-  .jobsPlaceAndPeriod, .studiesPlaceAndPeriod {
+  #experienceContainer {
     font-size: 1rem;
   }
 
+  .jobsPlaceAndPeriod,
+  .studiesPlaceAndPeriod {
+    font-size: 1rem;
+  }
 }

@@ -2,12 +2,12 @@ import './footer.css'
 
 const templateFooter = () => {
   return `
-    <h4>P4 - Portfolio - Rock the Code</h4>
+    <h4>© 2026 Romà Oliver · Built with Passion & Code</h4>
     `
 }
 
 export const printFooter = () => {
-  const footer = document.createElement("footer");
-  document.body.appendChild(footer);
+  const footer = document.createElement('footer')
+  document.body.appendChild(footer)
   footer.innerHTML = templateFooter()
 }

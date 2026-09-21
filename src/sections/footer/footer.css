@@ -1,13 +1,13 @@
 /* FOOTER */
 
 footer {
-  font-size: 0.9rem;
-  padding: var(--rtc-padding-xl);
+  padding: var(--rtc-padding-m);
   display: flex;
   justify-content: center;
   background-color: var(--rtc-bgColor2);
 }
 
 footer h4 {
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 300;
 }

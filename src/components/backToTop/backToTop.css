@@ -1,9 +1,8 @@
-
 #backToTop {
   display: none;
   position: fixed;
-  bottom: 3svh;
-  right: 3svw;
+  bottom: 30px;
+  right: 30px;
   padding: 15px 15px;
   font-size: 1.5rem;
   background-color: var(--rtc-color-3);
@@ -12,9 +11,9 @@
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 #backToTop:hover {

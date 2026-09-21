@@ -24,7 +24,7 @@ const templateExperience = () => {
 
   /*CONTENIDO DE CADA SECCIÓN*/
   /* Experience Header */
-  const experienceButton = createButton('Experience', 'experienceButton')
+  const experienceButton = createButton('Experience', 'experienceButton active')
   experienceButton.id = 'experienceButton'
 
   const studiesButton = createButton('Studies', 'experienceButton')
@@ -69,6 +69,11 @@ const templateExperience = () => {
   // Array de studies
   const studies = [
     {
+      title: 'thePower Tech School',
+      description: 'Full Stack Development Bootcamp',
+      placeAndPeriod: '2024 - 2026 | Remote'
+    },
+    {
       title: 'UNIVERSITAT DE VIC (Crash Escuela Audiovisual)',
       description: 'Diploma in Sound Engineering and Music Production',
       placeAndPeriod: '2015 - 2016 | Manresa, Barcelona'
@@ -100,11 +105,15 @@ const changeExperienceContainer = () => {
   studiesDiv.className = 'studies-hidden'
 
   experienceButton.addEventListener('click', () => {
+    experienceButton.classList.add('active')
+    studiesButton.classList.remove('active')
     experienceDiv.className = 'experience-active'
     studiesDiv.className = 'studies-hidden'
   })
 
   studiesButton.addEventListener('click', () => {
+    experienceButton.classList.remove('active')
+    studiesButton.classList.add('active')
     experienceDiv.className = 'experience-hidden'
     studiesDiv.className = 'studies-active'
   })

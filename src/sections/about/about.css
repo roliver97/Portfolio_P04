@@ -3,58 +3,98 @@
   display: flex;
   flex-direction: column;
   background-color: var(--rtc-bgColorInverted);
-  padding: var(--rtc-padding-3xl);
+  padding: var(--rtc-padding-3xl) 0;
   justify-content: space-around;
+  gap: var(--rtc-gap-m);
 }
 
 #about h2 {
   color: var(--rtc-textColorInverted);
-  font-size: 3rem;
+}
+
+#about .skillsDiv h2 {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  background-image: url('/icons/angry-underline.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-clip: padding-box;
+  background-position: 100px 27px;
+  background-size: 70px;
 }
 
 #about p {
   color: var(--rtc-textColorInverted);
-  font-size: 2rem;
+  width: 60%;
+  font-size: 1.3rem;
+  text-align: justify;
 }
 
 .aboutDiv,
 .skillsDiv {
   display: flex;
   flex-direction: column;
-  gap: var(--rtc-gap-xxl);
+  flex: 1;
+  justify-content: space-evenly;
 }
 
 .aboutDiv {
-  width: 60%;
+  padding: 0 var(--rtc-padding-3xl);
 }
 
 .skillsDiv {
   width: 100%;
-  align-self: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.skillsDiv h2 {
+  padding: 0 var(--rtc-padding-3xl);
 }
 
 .skillsList {
   display: flex;
-  justify-content: space-between;
+  /* gap: var(--rtc-gap-s); Infinite scroll won't work with this gap */
+  width: max-content;
+  padding: var(--rtc-padding-m) 0;
+  animation: scrollLeft 10s linear infinite;
+}
+
+.skillsList::-webkit-scrollbar {
+  display: none;
+}
+
+.skillsList:has(.skillItem:hover) {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
 }
 
 .skillItem {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
-
   align-items: center;
   box-shadow: 1px 3px 8px var(--rtc-bgColor);
 
   border-radius: 20px;
   display: flex;
+  margin-right: var(--rtc-gap-s);
 }
 
-.skillsList img {
+.skillItem img {
   width: 100%;
-  height: 100%;
-  padding: 10%;
+  max-height: 100%;
+  padding: 10px;
 }
 
 .skillItem .skillSpan {
@@ -64,6 +104,12 @@
   color: var(--rtc-bgColor);
   cursor: default;
   text-align: center;
+  text-wrap: wrap;
+}
+
+.skillItem:hover {
+  transform: scale(1.2);
+  z-index: 10;
 }
 
 .skillItem:hover img {
@@ -100,7 +146,7 @@
   }
 
   #about {
-    padding: var(--rtc-padding-xl) var(--rtc-padding-m);
+    padding: var(--rtc-padding-xl) 0;
   }
 
   #about h2 {
@@ -111,9 +157,5 @@
   #about p {
     color: var(--rtc-textColorInverted);
     font-size: 1.3rem;
-  }
-
-  .skillsList img {
-    width: 50px;
   }
 }
