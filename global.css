@@ -162,6 +162,16 @@ input {
   display: none !important;
 }
 
+.underlined {
+  padding-bottom: 15px;
+  background-image: url('/icons/angry-underline.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-clip: padding-box;
+  background-position: 50% 100%;
+  background-size: 100%;
+}
+
 /* WEBKIT SCROLLBAR */
 ::-webkit-scrollbar {
   width: 8px;
@@ -205,4 +215,16 @@ input {
 
 @media (max-width: 480px) {
   /* MOBILE or less */
+  h1 {
+    font-size: 1.7rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Compacta les seccions reduint els paddings verticals */
+  section {
+    padding: 15px;
+    justify-content: center;
+  }
 }

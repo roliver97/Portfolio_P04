@@ -37,6 +37,7 @@ const templateAbout = () => {
   const skillsList = document.createElement('ul')
 
   skillsTitle.textContent = 'Skills'
+  skillsTitle.classList.add('underlined')
   skillsList.className = 'skillsList'
 
   // Array de skills

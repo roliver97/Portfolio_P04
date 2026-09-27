@@ -1,6 +1,6 @@
 import './experience.css'
 import { createButton } from '../../components/buttons/buttons.js'
-import { templateExperienceList } from './experience_subcomponents/templateExperienceList/templateExperienceList.js'
+import { templateExperienceList } from './experienceList/experienceList.js'
 
 export const printExperience = () => {
   templateExperience()
@@ -26,9 +26,11 @@ const templateExperience = () => {
   /* Experience Header */
   const experienceButton = createButton('Experience', 'experienceButton active')
   experienceButton.id = 'experienceButton'
+  experienceButton.classList.add('underlined')
 
   const studiesButton = createButton('Studies', 'experienceButton')
   studiesButton.id = 'studiesButton'
+  studiesButton.classList.add('underlined')
 
   experienceHeader.appendChild(experienceButton)
   experienceHeader.appendChild(studiesButton)

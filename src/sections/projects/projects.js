@@ -1,6 +1,6 @@
 import { handleCategoryClick } from '../../utils/projects/smoothScroll'
 import './projects.css'
-import { printProjectCards } from './projects_subcomponents/projectCards/projectCards'
+import { printProjectCards } from './projectCards/projectCards'
 
 export const printProjects = () => {
   templateProjects()

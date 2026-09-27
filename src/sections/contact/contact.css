@@ -1,40 +1,51 @@
 #contactSection {
   display: flex;
-  justify-content: space-between;
-  height: 100svh;
   padding: var(--rtc-padding-3xl);
   background-color: var(--rtc-color-2);
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--rtc-gap-xl);
 }
 
-#interestsContainer {
+#titlesContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  padding-left: var(--rtc-padding-3xl);
   gap: var(--rtc-gap-l);
 }
 
-.interestsTitleSpan {
+#titlesContainer h2 {
+  text-align: center;
+}
+
+#formContainer {
+  width: 100%;
+  display: flex;
+  gap: var(--rtc-gap-xxl);
+  justify-content: center;
+}
+
+.contactTitleSpan {
   color: var(--rtc-textColorHighlight);
 }
 
 .buttonsContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--rtc-gap-l);
-  justify-content: center;
+  flex-direction: column;
+  gap: var(--rtc-gap-m);
+  justify-content: space-between;
+  min-width: 200px;
 }
 
 .interestBtn {
+  width: 100%;
+  height: 50px;
+
   display: flex;
-  flex-wrap: wrap;
   padding: var(--rtc-padding-s);
   line-height: 1.5;
-  flex: 0 0 40%;
-  height: 75px;
+
   background-color: var(--rtc-color-2);
   cursor: pointer;
   justify-content: center;
@@ -50,27 +61,17 @@
   border: 2px solid var(--rtc-color-4);
 }
 
-#formContainer {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  justify-content: space-evenly;
-  font-size: 2rem;
-  padding-right: var(--rtc-padding-3xl);
-}
-
 .contactForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   gap: var(--rtc-gap-xl);
+  width: 1000px;
 }
 
 .formGroup {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .contactForm input {
@@ -79,11 +80,12 @@
 
 .contactForm textarea {
   height: 150px;
+  font-family: var(--font-sans);
 }
 
 .contactForm input,
 .contactForm textarea {
-  width: 80%;
+  width: 100%;
   padding: var(--rtc-padding-m);
   border: 2px solid var(--rtc-color-1);
   background-color: var(--rtc-color-4);
@@ -93,7 +95,8 @@
     rgba(255, 255, 255, 1) 32%
   );
   border-radius: 10px;
-  font-weight: 500;
+
+  font-size: 0.8rem;
 }
 
 .contactForm input:focus,
@@ -104,23 +107,25 @@
 }
 
 #formSubmitButton {
-  width: 80%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--rtc-gap-l);
   background-color: var(--rtc-color-3);
-  border: 2px solid var(--rtc-color-4);
+  border: 2px solid var(--rtc-color-3);
   cursor: pointer;
   border-radius: 10px;
   font-size: 1rem;
   font-weight: 500;
 }
 
+#formSubmitButton:hover {
+  border: 2px solid var(--rtc-color-4);
+}
+
 #formSubmitButton:active {
   background-color: var(--rtc-color-4);
-  border: 2px solid var(--rtc-color-3);
 }
 
 #formSubmitIcon {
@@ -132,6 +137,9 @@
   display: flex;
   justify-content: center;
   gap: var(--rtc-gap-xl);
+  width: 100%;
+  height: 50px;
+  align-items: center;
 }
 
 .contactLinksList img {
@@ -143,16 +151,9 @@
   transition: transform 0.2s ease;
 }
 
-@media (max-width: 1500px) {
-  #interestsContainer,
-  #formContainer,
-  .contactForm {
-    padding: 0;
-    font-size: 1.8rem;
-    gap: var(--rtc-gap-l);
-    justify-content: center;
-    text-align: center;
-  }
+/*!  MEDIA  */
+@media (max-width: 1800px) {
+  /* DESKTOP or less */
 
   .interestBtn {
     padding: var(--rtc-padding-xs);
@@ -161,36 +162,37 @@
     font-size: 0.8rem;
     font-weight: 500;
   }
-
-  .contactForm input,
-  .contactForm textarea {
-    font-size: 0.75rem;
-  }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
+  /* LAPTOP - TABLET or less */
   #contactSection {
-    padding: var(--rtc-padding-xl) var(--rtc-padding-m);
+    gap: var(--rtc-gap-xl);
   }
 
-  #interestsContainer,
   #formContainer {
     font-size: 1rem;
-    width: 47%;
+    flex-direction: column;
+  }
+
+  .contactForm {
+    width: 100%;
   }
 
   .contactForm input,
   .contactForm textarea {
-    font-size: 0.7rem;
     padding: var(--rtc-padding-s);
   }
 
   .buttonsContainer {
-    gap: var(--rtc-gap-s);
+    gap: var(--rtc-gap-xs);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .interestBtn {
-    flex: 0 0 100%;
+    width: 200px;
   }
 
   #formSubmitButton {
@@ -200,11 +202,53 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
+
+  #titlesContainer {
+    font-size: 1rem;
+    gap: var(--rtc-gap-s);
+  }
+
+  #formContainer {
+    gap: var(--rtc-gap-m);
+  }
+
+  #formContainer .contactForm {
+    gap: var(--rtc-gap-s);
+  }
+
+  #formContainer .contactForm input,
+  #formContainer .contactForm textarea {
+    width: 100%;
+  }
+
+  #titlesContainer h4 {
+    font-size: 0.95rem;
+  }
+
+  #formSubmitButton {
+    gap: var(--rtc-gap-s);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
+  #contactSection {
+    padding: var(--rtc-padding-m) var(--rtc-padding-s);
+    gap: var(--rtc-gap-l);
+  }
+
   .contactForm input,
   .contactForm textarea {
     font-size: 0.5rem;
     padding: var(--rtc-padding-xs);
+  }
+
+  .interestBtn {
+    width: 100px;
   }
 
   .contactLinksList {

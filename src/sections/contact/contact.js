@@ -1,38 +1,17 @@
 import './contact.css'
-import { createForm } from '../../components/forms/forms.js'
-import { createContactTitle } from './contact_subcomponents/contactTitle.js'
-import { createInterestButtons } from './contact_subcomponents/interestButtons.js'
-import { createContactLinks } from './contact_subcomponents/contactLinks.js'
+import { templateInterestButtons } from './interestButtons/interestButtons.js'
+import { templateContactForm } from './contactForm/contactForm.js'
 
-const interestFields = [
-  'Ecommerce Website',
-  'Data Base',
-  'Landing Page',
-  'Blog Website',
-  'App'
-]
-
-const contactFields = [
+const contactLinks = [
   {
-    label: 'Name',
-    name: 'name',
-    type: 'text',
-    placeholder: 'Enter your name',
-    noLabel: true
+    name: 'LinkedIn',
+    icon: import.meta.env.BASE_URL + 'icons/linkedin_link.png',
+    url: 'https://www.linkedin.com/in/rom%C3%A0-oliver-370707179/'
   },
   {
-    label: 'Email',
-    name: 'email',
-    type: 'email',
-    placeholder: 'Enter your email',
-    noLabel: true
-  },
-  {
-    label: 'Message',
-    name: 'message',
-    type: 'textarea',
-    placeholder: 'Write your message',
-    noLabel: true
+    name: 'GitHub',
+    icon: import.meta.env.BASE_URL + 'icons/github_link.png',
+    url: 'https://github.com/roliver97'
   }
 ]
 
@@ -46,20 +25,28 @@ const templateContact = () => {
   document.body.appendChild(contactSection)
 
   /* Containers */
-  const interestsContainer = document.createElement('div')
-  interestsContainer.id = 'interestsContainer'
-  contactSection.appendChild(interestsContainer)
+  const titlesContainer = document.createElement('div')
+  titlesContainer.id = 'titlesContainer'
+  contactSection.appendChild(titlesContainer)
 
   const formContainer = document.createElement('div')
   formContainer.id = 'formContainer'
   contactSection.appendChild(formContainer)
 
   /* Titles */
-  createContactTitle(interestsContainer)
+  const contactTitle = document.createElement('h2')
+  contactTitle.append("Let's discuss on something ")
+  const contactTitleSpan = document.createElement('span')
+  contactTitleSpan.textContent = 'cool'
+  contactTitleSpan.className = 'contactTitleSpan'
+  const contactSubtitle = document.createElement('h4')
+  contactSubtitle.textContent = "I'm interested in ..."
+
+  contactTitle.append(contactTitleSpan, ' together')
+  titlesContainer.append(contactTitle, contactSubtitle)
 
   /* Form */
-  const form = createForm(contactFields, 'contactForm', 'Submit')
-  formContainer.appendChild(form)
+  const form = templateContactForm()
 
   /* Hidden input */
   // Añadimos un input hidden al form para guardar la opción (botón) seleccionado por el usuario
@@ -69,8 +56,25 @@ const templateContact = () => {
   form.appendChild(hiddenInput)
 
   /* Botones d’interès */
-  createInterestButtons(interestFields, interestsContainer, hiddenInput)
+  const interestButtons = templateInterestButtons(hiddenInput)
+  formContainer.append(interestButtons, form)
 
   /* Contact links */
-  createContactLinks(formContainer)
+  const contactLinksList = document.createElement('ul')
+  contactLinksList.className = 'contactLinksList'
+
+  contactLinks.forEach((link) => {
+    const li = document.createElement('li')
+    const icon = document.createElement('img')
+    const a = document.createElement('a')
+    icon.src = link.icon
+    icon.alt = link.name
+    a.href = link.url
+    a.target = '_blank'
+    li.appendChild(a)
+    a.appendChild(icon)
+    contactLinksList.appendChild(li)
+  })
+
+  contactSection.appendChild(contactLinksList)
 }

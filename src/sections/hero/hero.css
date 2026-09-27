@@ -108,21 +108,15 @@
   display: flex;
 
   gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #hero .heroBtn span {
   font-weight: 800;
   text-shadow: 2px 2px 1px rgba(253, 253, 253, 0.3);
-
-  padding-bottom: 25px;
-  background-image: url('/icons/angry-underline.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-size: 0%;
-  background-clip: padding-box;
-  background-position: 0px 30px;
-
   transition: background-size 0.01s ease;
+  background-size: 0%;
 }
 
 #hero .heroBtn:hover span {
@@ -217,4 +211,7 @@
 
 @media (max-width: 480px) {
   /* MOBILE or less */
+  #hero {
+    padding: var(--rtc-padding-xs);
+  }
 }

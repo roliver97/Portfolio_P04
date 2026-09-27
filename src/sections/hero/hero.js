@@ -41,6 +41,7 @@ const templateHero = () => {
   link.className = 'heroLink'
   link.href = '#projectsSection'
   buttonSpan.textContent = ' PROJECTS'
+  buttonSpan.classList.add('underlined')
 
   link.addEventListener('click', (e) => {
     e.preventDefault()
