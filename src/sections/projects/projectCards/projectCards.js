@@ -1,3 +1,4 @@
+import './projectCards.css'
 import { scrollToTop } from '../../../components/backToTop/backToTop.js'
 import { updateActiveButtonOnScroll } from '../../../utils/projects/scrollSpy.js'
 import { templateProjectCard } from './projectCard/projectCard.js'

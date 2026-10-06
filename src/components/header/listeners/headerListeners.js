@@ -1,50 +1,75 @@
 export const addHeaderListeners = (header, hamburgerBtn) => {
   const mobileMedia = '(max-width: 1024px)'
   const headerLinks = header.querySelectorAll('a[href^="#"]')
-  const headerCollapsed = header.classList.contains('collapsed')
+
   const toggleMenu = () => {
-    if (headerCollapsed) {
+    if (header.classList.contains('collapsed')) {
       header.classList.remove('collapsed')
     } else {
-      header.classList.remove('collapsed')
+      header.classList.add('collapsed')
     }
   }
 
-  window.addEventListener('resize', () => {
+  const checkScreenSize = () => {
     const isMobile = window.matchMedia(mobileMedia).matches
-    if (isMobile) header.classList.add('mobile')
-    if (!isMobile) header.classList.remove('mobile')
-  })
+    if (isMobile) {
+      header.classList.add('mobile')
+    } else {
+      header.classList.remove('mobile')
+    }
+  }
 
-  // Scroll vertical suave (pulsando los links) y cerrado del menú
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
+
+  const initHeaderAnimation = () => {
+    const isMobile = window.matchMedia(mobileMedia).matches
+    if (!isMobile) {
+      hamburgerBtn.classList.add('init')
+      setTimeout(() => {
+        header.classList.remove('collapsed')
+        setTimeout(() => {
+          header.classList.add('init')
+          setTimeout(() => {
+            header.classList.remove('init')
+            header.classList.add('collapsed')
+            hamburgerBtn.classList.remove('init')
+          }, 800)
+        }, 400)
+      }, 100)
+    }
+  }
+
+  initHeaderAnimation()
+
   headerLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
-      e.preventDefault() // evita un salto instantaneo
+      e.preventDefault()
       const targetId = link.getAttribute('href').substring(1)
       const target = document.getElementById(targetId)
       target.scrollIntoView({ behavior: 'smooth' })
-
-      if (headerCollapsed) {
-        toggleMenu()
-      }
     })
   })
 
-  // Cerrado del menú si el usuario hace click
   document.addEventListener('click', (e) => {
-    const isMobile = header.classList.contains('mobile')
-    const isHamburgerClick = hamburgerBtn.contains(e.target)
-    if (isMobile && !isHamburgerClick) {
-      header.classList.add('collapsed')
+    const isMobile = window.matchMedia(mobileMedia).matches
+    const isHeaderCollapsed = header.classList.contains('collapsed')
+    const clickedInside = hamburgerButton.contains(e.target)
+
+    if (isMobile && !isHeaderCollapsed && !clickedInside) {
+      toggleMenu()
+    } else if (isMobile && clickedInside) {
+      toggleMenu()
     }
   })
 
-  hamburgerBtn.addEventListener('mouseenter', () => {
-    header.classList.remove('collapsed') // Per exemple, el mostrem
-  })
+  if (!window.matchMedia(mobileMedia).matches) {
+    hamburgerBtn.addEventListener('mouseenter', () => {
+      header.classList.remove('collapsed')
+    })
 
-  // 2. Quan el ratolí SURT de dins del header
-  header.addEventListener('mouseleave', () => {
-    header.classList.add('collapsed') // Per exemple, l'amaguem
-  })
+    header.addEventListener('mouseleave', () => {
+      header.classList.add('collapsed')
+    })
+  }
 }

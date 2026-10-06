@@ -23,5 +23,7 @@ printFooter()
 
 window.addEventListener('DOMContentLoaded', () => {
   scrollToTop()
+  showBackToTop()
+  showChangeSection()
   initHeaderObserver()
 })

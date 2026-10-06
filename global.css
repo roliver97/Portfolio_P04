@@ -122,9 +122,12 @@ h4 {
   font-size: 1.4rem;
 }
 
-h5,
-h6 {
+h5 {
   font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 p,
@@ -199,6 +202,24 @@ input {
 
 @media (max-width: 1024px) {
   /* LAPTOP - TABLET or less */
+  h1 {
+    font-size: 1.7rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 769px) {
@@ -215,12 +236,6 @@ input {
 
 @media (max-width: 480px) {
   /* MOBILE or less */
-  h1 {
-    font-size: 1.7rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
 
   /* Compacta les seccions reduint els paddings verticals */
   section {

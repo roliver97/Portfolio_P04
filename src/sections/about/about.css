@@ -13,17 +13,14 @@
 }
 
 #about .skillsDiv h2 {
-  font-size: 1.5rem;
-
   padding-bottom: 5px;
-  background-size: 65px;
+  background-size: 90px;
   background-position: 100% 100%;
 }
 
 .aboutDiv p {
   color: var(--rtc-textColorInverted);
   width: 60%;
-  font-size: 1.3rem;
   text-align: justify;
 }
 
@@ -133,24 +130,24 @@
 @media (max-width: 1024px) {
   /* LAPTOP - TABLET or less */
   #about {
-    text-align: center;
     padding: var(--rtc-padding-xl) 0;
-    gap: var(--rtc-gap-m);
+    gap: 0;
   }
 
   #about h2 {
     color: var(--rtc-textColorInverted);
-    font-size: 1.8rem;
+    padding-bottom: var(--rtc-padding-m);
+    text-align: center;
   }
 
   #about .aboutDiv {
-    flex: 3;
     padding: 0 var(--rtc-padding-l);
+    justify-content: center;
   }
 
   #about .skillsDiv {
-    flex: 2;
     align-items: center;
+    justify-content: center;
   }
 
   #about .skillsDiv h2 {
@@ -158,25 +155,34 @@
     background-size: 60px;
   }
 
-  .aboutDiv p {
-    color: var(--rtc-textColorInverted);
-    font-size: 1.3rem;
+  .aboutDiv p::first-line {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .skillItem {
+    width: 75px;
+    height: 75px;
   }
 }
 
 @media (max-width: 769px) {
   /* SMALL TABLET or less */
+  #about .aboutDiv {
+    flex: 3;
+  }
+
   #about .skillsDiv {
-    flex: 1;
+    flex: 2;
   }
 }
 
 @media (max-width: 480px) {
   /* MOBILE or less */
-  .aboutDiv p {
-    font-size: 1rem;
+  #about .skillsDiv {
+    flex: 1;
   }
-
   .skillItem {
     width: 50px;
     height: 50px;

@@ -2,7 +2,8 @@ section {
   position: relative; /* necessari perquè els botons es posicionin dins */
 }
 
-.upSection, .downSection {
+.upSection,
+.downSection {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -14,31 +15,50 @@ section {
   background: transparent;
   border: none;
   border-radius: 20%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
-.upSection { top: 20px; }
-.downSection { bottom: 20px; }
+.upSection {
+  top: 20px;
+}
+.downSection {
+  bottom: 20px;
+}
 
-.upSection img, .downSection img {
+.upSection img,
+.downSection img {
   max-width: 15px;
-  max-height: 15px; 
+  max-height: 15px;
   fill: red;
   stroke: red;
 }
 
-/* --- MEDIA QUERY --- */
-@media (max-width: 800px) {
-    .upSection, .downSection {
-        width: 30px; 
-        height: 30px;
-    }
-    
-    .upSection { 
-        top: 15px;
-    }
-    .downSection { 
-        bottom: 15px;
-    }
+/*! MEDIA QUERIES */
+@media (max-width: 1800px) {
+  /* DESKTOP or less */
+}
+
+@media (max-width: 1024px) {
+  /* LAPTOP - TABLET or less */
+  .upSection,
+  .downSection {
+    width: 30px;
+    height: 30px;
+  }
+
+  .upSection {
+    top: 15px;
+  }
+  .downSection {
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 769px) {
+  /* SMALL TABLET or less */
+}
+
+@media (max-width: 480px) {
+  /* MOBILE or less */
 }

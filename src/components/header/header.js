@@ -64,25 +64,5 @@ const templateHeader = () => {
 
   nav.appendChild(navList)
 
-  hamburgerButton.addEventListener('click', (e) => {
-    header.classList.toggle('collapsed')
-  })
-
-  const initHeaderAnimation = () => {
-    hamburgerButton.classList.add('init')
-    setTimeout(() => {
-      header.classList.remove('collapsed')
-      setTimeout(() => {
-        header.classList.add('init')
-        setTimeout(() => {
-          header.classList.remove('init')
-          header.classList.add('collapsed')
-          hamburgerButton.classList.remove('init')
-        }, 800)
-      }, 400)
-    }, 100)
-  }
-
-  initHeaderAnimation()
   addHeaderListeners(header, hamburgerButton)
 }

@@ -82,7 +82,8 @@ body:has(header.collapsed) #hamburgerButton {
   transition: opacity 0.7s ease;
 }
 
-body:has(header.collapsed) #hamburgerButton.init {
+#hamburgerButton.init,
+body:has(header.mobile) #hamburgerButton.init {
   opacity: 0;
 }
 

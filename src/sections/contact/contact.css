@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--rtc-gap-xl);
+  gap: var(--rtc-gap-m);
   width: 1000px;
 }
 
@@ -168,6 +168,7 @@
   /* LAPTOP - TABLET or less */
   #contactSection {
     gap: var(--rtc-gap-xl);
+    padding: var(--rtc-padding-xl);
   }
 
   #formContainer {
@@ -192,7 +193,7 @@
   }
 
   .interestBtn {
-    width: 200px;
+    width: 150px;
   }
 
   #formSubmitButton {
@@ -236,9 +237,27 @@
 
 @media (max-width: 480px) {
   /* MOBILE or less */
+
   #contactSection {
     padding: var(--rtc-padding-m) var(--rtc-padding-s);
-    gap: var(--rtc-gap-l);
+    gap: var(--rtc-gap-s);
+    justify-content: space-evenly;
+  }
+
+  #titlesContainer {
+    gap: var(--rtc-gap-xs);
+  }
+
+  #formContainer {
+    gap: var(--rtc-gap-s);
+  }
+
+  #formContainer .contactForm {
+    gap: var(--rtc-gap-xs);
+  }
+
+  .contactForm input {
+    height: 40px;
   }
 
   .contactForm input,
@@ -249,9 +268,15 @@
 
   .interestBtn {
     width: 100px;
+    height: 40px;
   }
 
   .contactLinksList {
     gap: var(--rtc-gap-m);
+    height: 40px;
+  }
+
+  #formSubmitButton {
+    height: 40px;
   }
 }

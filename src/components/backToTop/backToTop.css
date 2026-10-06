@@ -24,11 +24,14 @@
   width: 25px;
 }
 
-@media (max-width: 600px) {
-  #backToTop {
-    bottom: 10px;
-    right: 10px;
-    padding: 10px;
-    font-size: 1.2rem;
-  }
+/*! MOBILE */
+body:has(header.mobile) #backToTop {
+  bottom: 10px;
+  right: 10px;
+  padding: 5px;
+  background-color: var(--rtc-color-3);
+}
+
+body:has(header.mobile) #backToTopIcon {
+  width: 20px;
 }

@@ -1,6 +1,9 @@
 import './experience.css'
 import { createButton } from '../../components/buttons/buttons.js'
-import { templateExperienceList } from './experienceList/experienceList.js'
+
+import experiences from '../../data/experiences.json'
+import studies from '../../data/studies.json'
+import { changeExperienceContainer } from './experienceListeners/experienceListeners.js'
 
 export const printExperience = () => {
   templateExperience()
@@ -35,24 +38,10 @@ const templateExperience = () => {
   experienceHeader.appendChild(experienceButton)
   experienceHeader.appendChild(studiesButton)
 
-  /* Experience Container */
+  /* Experience Div */
   const experienceDiv = document.createElement('div')
   experienceDiv.id = 'experienceDiv'
   experienceContainer.appendChild(experienceDiv)
-
-  // Array de experiences
-  const experiences = [
-    {
-      title: 'BLAY TAMARIT, SL / RAMADERA MONTPEDRÓS, SLU',
-      description: 'Operations & Administration',
-      placeAndPeriod: '2022 - 2025 | Gualta, Girona'
-    },
-    {
-      title: 'LOUIS VUITTON S.A. – Manufacture de Maroquinerie et Accessoires',
-      description: 'Leather Goods Specialist',
-      placeAndPeriod: '2019 - 2022 | Barberà del Vallès, Barcelona'
-    }
-  ]
 
   const experienceList = document.createElement('ul')
 
@@ -68,25 +57,6 @@ const templateExperience = () => {
   studiesDiv.id = 'studiesDiv'
   experienceContainer.appendChild(studiesDiv)
 
-  // Array de studies
-  const studies = [
-    {
-      title: 'thePower Tech School',
-      description: 'Full Stack Development Bootcamp',
-      placeAndPeriod: '2024 - 2026 | Remote'
-    },
-    {
-      title: 'UNIVERSITAT DE VIC (Crash Escuela Audiovisual)',
-      description: 'Diploma in Sound Engineering and Music Production',
-      placeAndPeriod: '2015 - 2016 | Manresa, Barcelona'
-    },
-    {
-      title: "INSTITUT D'AURO",
-      description: 'High School Diploma, Social & Humanities Track',
-      placeAndPeriod: '2013 - 2015 | Santpedor, Barcelona'
-    }
-  ]
-
   const studiesList = document.createElement('ul')
 
   studies.forEach((study) => {
@@ -97,26 +67,20 @@ const templateExperience = () => {
   studiesDiv.appendChild(studiesList)
 }
 
-const changeExperienceContainer = () => {
-  const experienceButton = document.querySelector('#experienceButton')
-  const studiesButton = document.querySelector('#studiesButton')
-  const experienceDiv = document.querySelector('#experienceDiv')
-  const studiesDiv = document.querySelector('#studiesDiv')
+const templateExperienceList = (item, className) => {
+  const li = document.createElement('li')
+  const h4 = document.createElement('h4')
+  const description = document.createElement('p')
+  const placeAndPeriod = document.createElement('p')
 
-  experienceDiv.className = 'experience-active'
-  studiesDiv.className = 'studies-hidden'
+  h4.textContent = item.title
+  description.textContent = item.description
+  placeAndPeriod.textContent = item.placeAndPeriod
+  placeAndPeriod.className = className
 
-  experienceButton.addEventListener('click', () => {
-    experienceButton.classList.add('active')
-    studiesButton.classList.remove('active')
-    experienceDiv.className = 'experience-active'
-    studiesDiv.className = 'studies-hidden'
-  })
+  li.appendChild(h4)
+  li.appendChild(description)
+  li.appendChild(placeAndPeriod)
 
-  studiesButton.addEventListener('click', () => {
-    experienceButton.classList.remove('active')
-    studiesButton.classList.add('active')
-    experienceDiv.className = 'experience-hidden'
-    studiesDiv.className = 'studies-active'
-  })
+  return li
 }
