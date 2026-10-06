@@ -49,6 +49,12 @@
   transition: all 0.3s ease;
 }
 
+.projectCard .projectContentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rtc-gap-l);
+}
+
 .projectCard .titleDiv {
   display: flex;
   flex-direction: column;
@@ -127,7 +133,6 @@
   border-radius: 20px;
   border: 8px solid var(--rtc-color-1);
   object-fit: cover;
-  height: fit-content;
 }
 
 .projectIconsContainer {
@@ -245,12 +250,6 @@ a:has(.falseAppButton) {
     font-weight: 400;
     font-size: 0.75rem;
     color: var(--rtc-color-3);
-  }
-
-  .projectBannerImg,
-  .projectIconsContainer {
-    max-height: 110px;
-    object-fit: cover;
   }
 
   .projectBannerIcon {

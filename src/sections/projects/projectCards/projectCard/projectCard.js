@@ -4,26 +4,29 @@ export const templateProjectCard = (project) => {
   // Contenedor de cada card
   const card = document.createElement('div')
   card.className = 'projectCard'
-
-  // Contenido de cada card
-  let mediaElement
+  const cardMediaContainer = document.createElement('div')
+  const cardContentContainer = document.createElement('div')
+  cardContentContainer.className = 'projectContentContainer'
+  const cardButtonsContainer = document.createElement('div')
+  cardButtonsContainer.className = 'projectButtonsContainer'
 
   if (Array.isArray(project.image)) {
-    mediaElement = document.createElement('div')
-    mediaElement.className = 'projectIconsContainer'
+    cardMediaContainer.className = 'projectIconsContainer'
 
     project.image.forEach((iconSrc) => {
       const iconImg = document.createElement('img')
       iconImg.src = iconSrc
       iconImg.alt = `${project.title} icon`
       iconImg.className = 'projectBannerIcon'
-      mediaElement.appendChild(iconImg)
+      cardMediaContainer.appendChild(iconImg)
     })
   } else {
-    mediaElement = document.createElement('img')
-    mediaElement.className = 'projectBannerImg'
-    mediaElement.src = project.image
-    mediaElement.alt = project.title
+    cardMediaContainer.className = 'projectImageContainer'
+    const cardImg = document.createElement('img')
+    cardImg.className = 'projectBannerImg'
+    cardImg.src = project.image
+    cardImg.alt = project.title
+    cardMediaContainer.appendChild(cardImg)
   }
 
   const cardTitleDiv = document.createElement('div')
@@ -46,13 +49,11 @@ export const templateProjectCard = (project) => {
   p.className = 'projectDescription'
   p.textContent = project.description
 
+  cardContentContainer.append(cardTitleDiv, p)
+
   const linksDiv = document.createElement('div')
   linksDiv.className = 'linksDiv'
-
-  card.appendChild(mediaElement)
-  card.appendChild(cardTitleDiv)
-  card.appendChild(p)
-  card.appendChild(linksDiv)
+  cardButtonsContainer.append(linksDiv)
 
   const githubButton = createButton('./icons/github_link.png', 'githubButton')
   const falseAppButton = createButton('View App', 'falseAppButton')
@@ -93,6 +94,10 @@ export const templateProjectCard = (project) => {
       alert('This link is not available.')
     })
   }
+
+  card.appendChild(cardMediaContainer)
+  card.appendChild(cardContentContainer)
+  card.appendChild(cardButtonsContainer)
 
   return card
 }
