@@ -86,7 +86,7 @@
 .contactForm input,
 .contactForm textarea {
   width: 100%;
-  padding: var(--rtc-padding-m);
+  padding: var(--rtc-padding-xs);
   border: 2px solid var(--rtc-color-1);
   background-color: var(--rtc-color-4);
   background: linear-gradient(
@@ -180,11 +180,6 @@
     width: 100%;
   }
 
-  .contactForm input,
-  .contactForm textarea {
-    padding: var(--rtc-padding-s);
-  }
-
   .buttonsContainer {
     gap: var(--rtc-gap-xs);
     flex-direction: row;
@@ -263,7 +258,6 @@
   .contactForm input,
   .contactForm textarea {
     font-size: 0.5rem;
-    padding: var(--rtc-padding-xs);
   }
 
   .interestBtn {

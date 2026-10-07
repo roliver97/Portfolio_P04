@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: var(--rtc-padding-3xl) 0;
   justify-content: space-evenly;
+  gap: var(--rtc-gap-s);
   background-color: var(--rtc-bgColorInverted);
   height: 100svh;
 }
@@ -15,7 +16,7 @@
 #projectsHeader {
   display: flex;
   flex-direction: column;
-  gap: var(--rtc-gap-m);
+  gap: var(--rtc-gap-s);
   font-size: 2rem;
   position: relative;
   padding: 0 var(--rtc-padding-3xl);
@@ -71,9 +72,15 @@
 
   scroll-behavior: smooth;
   padding-bottom: 50px;
-  cursor: grab;
 
   max-height: 700px;
+
+  user-select: none;
+  cursor: grab;
+}
+
+#cardsContainer:active {
+  cursor: grabbing;
 }
 
 #cardsContainer::-webkit-scrollbar {

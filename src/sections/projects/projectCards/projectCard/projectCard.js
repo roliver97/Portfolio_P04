@@ -1,3 +1,4 @@
+import { scrollToTop } from '../../../../components/backToTop/backToTop'
 import { createButton } from '../../../../components/buttons/buttons'
 
 export const templateProjectCard = (project) => {
@@ -56,27 +57,35 @@ export const templateProjectCard = (project) => {
   cardButtonsContainer.append(linksDiv)
 
   const githubButton = createButton('./icons/github_link.png', 'githubButton')
-  const falseAppButton = createButton('View App', 'falseAppButton')
-  const fullCardLink = document.createElement('a')
-  fullCardLink.className = 'fullCardLink'
+  const appButton = createButton('View App', 'appButton')
+  const mobileFullCardLink = document.createElement('a')
+  mobileFullCardLink.className = 'mobileFullCardLink'
 
-  if (typeof project.url === 'function') {
+  if (project.url === 'scrollToTop') {
     //e.g. scrollToTop function
-    fullCardLink.addEventListener('click', project.url)
-    falseAppButton.addEventListener('click', project.url)
-    card.appendChild(fullCardLink)
-    linksDiv.appendChild(falseAppButton)
+    mobileFullCardLink.addEventListener('click', scrollToTop)
+    appButton.addEventListener('click', scrollToTop)
+
+    linksDiv.appendChild(appButton)
   } else if (project.url) {
-    fullCardLink.href = project.url
-    card.appendChild(fullCardLink)
-    fullCardLink.target = '_blank'
+    mobileFullCardLink.href = project.url
+    mobileFullCardLink.target = '_blank'
 
     const link = document.createElement('a')
     link.href = project.url
     link.target = '_blank'
-    link.appendChild(falseAppButton)
+    link.appendChild(appButton)
     linksDiv.appendChild(link)
   }
+
+  window.addEventListener('resize', () => {
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches
+    if (isMobile && project.url) {
+      card.appendChild(mobileFullCardLink)
+    } else {
+      mobileFullCardLink.remove()
+    }
+  })
 
   if (project.github) {
     const link = document.createElement('a')

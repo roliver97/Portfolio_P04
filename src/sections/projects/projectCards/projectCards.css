@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   gap: var(--rtc-gap-l);
-  padding-top: 30px;
+  padding-top: 25px;
 }
 
 .cardsGrid::before {
@@ -10,23 +10,27 @@
   position: absolute;
   top: 0;
   width: 100%;
-  border: 3px solid var(--rtc-bgColor2);
+  border: 3px solid #daecf0;
   border-bottom: none;
   padding-top: 10px;
   border-radius: 5px 5px 0 0;
-  opacity: 20%;
+  cursor: grab;
 }
 
 .cardsGrid::after {
   content: var(--grid-title);
   position: absolute;
-  top: -20px;
+  top: -9px;
   left: 100px;
   background-color: white;
-  padding: 10px;
+  border-left: 2px solid #daecf0;
+  border-right: 2px solid #daecf0;
+  border-radius: 15%;
+  padding: 3px 5px;
   color: var(--rtc-color-2);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  cursor: grab;
 }
 
 .projectCard {
@@ -34,8 +38,7 @@
 
   display: flex;
   flex-direction: column;
-  padding: var(--rtc-padding-s);
-  gap: var(--rtc-gap-s);
+  padding: var(--rtc-padding-xs);
   justify-content: space-between;
   background-color: var(--rtc-bgColor4);
   border-radius: var(--rtc-card-border-radius);
@@ -45,14 +48,26 @@
     10px 10px 5px 5px rgba(0, 0, 0, 0.3);
   min-width: 400px;
   height: 100%;
-  cursor: default;
+  cursor: grab;
   transition: all 0.3s ease;
 }
 
 .projectCard .projectContentContainer {
   display: flex;
   flex-direction: column;
-  gap: var(--rtc-gap-l);
+  gap: var(--rtc-gap-s);
+  padding: 0 var(--rtc-padding-xs);
+}
+
+.projectContentContainer .title {
+  font-size: 1rem;
+}
+.projectContentContainer .projectDescription {
+  font-size: 0.9rem;
+}
+
+.projectContentContainer h6.subtitle {
+  font-size: 0.7rem;
 }
 
 .projectCard .titleDiv {
@@ -63,7 +78,7 @@
 
 .projectCard .subtitleWrapper {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -71,6 +86,8 @@
   font-size: 0.7rem;
   color: rgb(189, 189, 189);
   font-weight: 600;
+  max-width: 60px;
+  text-align: center;
 }
 
 .projectCard .subtitle {
@@ -85,13 +102,13 @@
   color: var(--rtc-textColorInverted);
 }
 
-.fullCardLink {
+.mobileFullCardLink {
   position: absolute;
   inset: 0;
 }
 
 .githubButton,
-.falseAppButton {
+.appButton {
   z-index: 2;
   position: relative;
   transition:
@@ -99,30 +116,12 @@
     outline 0.1s ease;
 }
 
-.projectCard:hover:has(.githubButton:hover) {
-  background-color: var(--rtc-bgColor4);
-  box-shadow:
-    5px 5px 1px 1px var(--rtc-color-6),
-    10px 10px 5px 5px rgba(0, 0, 0, 0.3);
+.projectCard:hover {
+  transform: scale(1.02);
 }
 
-.projectCard:has(.githubButton:hover) .falseAppButton {
-  background-color: var(--rtc-bgColor);
-}
-
-.projectCard:hover:has(.fullCardLink) {
-  background-color: var(--rtc-color-5);
-  box-shadow:
-    5px 5px 1px 1px var(--rtc-color-4),
-    10px 10px 5px 5px rgba(0, 0, 0, 0.3);
-  /*   cursor: pointer; */
-}
-
-.projectCard:hover .falseAppButton {
+.appButton:hover {
   background-color: var(--rtc-bgColor2);
-}
-
-.falseAppButton:hover {
   outline: 2px solid var(--rtc-bgColor2);
 }
 
@@ -158,13 +157,14 @@
   width: 100%;
   gap: var(--rtc-gap-s);
   justify-content: center;
+  padding: 0 var(--rtc-padding-xs);
 }
 
-a:has(.falseAppButton) {
+a:has(.appButton) {
   flex: 1;
 }
 
-.falseAppButton {
+.appButton {
   border: none;
   width: 100%;
   height: 40px;
@@ -203,7 +203,7 @@ a:has(.falseAppButton) {
   /* LAPTOP - TABLET or less */
   .cardsGrid {
     align-items: center;
-    padding-top: 15px;
+    padding-top: 20px;
   }
 
   .cardsGrid::after {
@@ -225,10 +225,6 @@ a:has(.falseAppButton) {
 
   .projectDescription {
     text-align: justify;
-  }
-
-  .projectDescription {
-    font-size: 0.9rem;
   }
 
   .projectBannerIcon {
