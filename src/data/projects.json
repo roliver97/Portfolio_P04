@@ -13,7 +13,7 @@
     "subtitle": "P12 - Rock The Code Project",
     "description": "Advanced React single-page application featuring arcade minigames, state management, and interactive scoreboards",
     "image": "images/projects/gamehub2.png",
-    "github": "https://github.com/roliver97/AdvancedReact_P12_GameHub2",
+    "github": "https://github.com/roliver97/P12_GameHub2",
     "url": "https://gamehub2-p12.vercel.app/",
     "category": "react",
     "architecture": "Frontend"
@@ -23,7 +23,7 @@
     "subtitle": "P11 - Rock The Code Project",
     "description": "Responsive React app fetching live weather forecasting and airport tracking data using components and external APIs",
     "image": "images/projects/skyguide.png",
-    "github": "https://github.com/roliver97/ReactBasics_P11_SkyGuide",
+    "github": "https://github.com/roliver97/P11_SkyGuide",
     "url": "https://skyguide-p11.vercel.app/",
     "category": "react",
     "architecture": "Frontend"
@@ -33,7 +33,7 @@
     "subtitle": "P10 - Rock The Code Project",
     "description": "Full stack event management platform featuring a Vanilla JS frontend connected to a robust Node.js and Express backend API",
     "image": "images/projects/evently.png",
-    "github": "https://github.com/roliver97/FullStackJavascript_P10_Evently_frontend",
+    "github": "https://github.com/roliver97/P10_Evently_frontend",
     "url": "https://evently-frontend-p10.vercel.app",
     "category": "node.js",
     "architecture": "Frontend & Backend"
@@ -49,7 +49,7 @@
       "icons/skills/mongodb.svg",
       "icons/skills/puppeteer.svg"
     ],
-    "github": "https://github.com/roliver97/WebScrapping_P09",
+    "github": "https://github.com/roliver97/P09_WebScrapping",
     "category": "node.js",
     "architecture": "Backend"
   },
@@ -64,7 +64,7 @@
       "icons/skills/mongodb.svg",
       "icons/skills/cloudinary.png"
     ],
-    "github": "https://github.com/roliver97/ApiRestFiles_P08",
+    "github": "https://github.com/roliver97/P08_ApiRestFiles",
     "category": "node.js",
     "architecture": "Backend"
   },
@@ -78,7 +78,7 @@
       "icons/skills/jwt.webp",
       "icons/skills/mongodb.svg"
     ],
-    "github": "https://github.com/roliver97/ApiRestAuth_P07",
+    "github": "https://github.com/roliver97/P07_ApiRestAuth",
     "category": "node.js",
     "architecture": "Backend"
   },
@@ -91,7 +91,7 @@
       "icons/skills/expressjs.png",
       "icons/skills/mongodb.svg"
     ],
-    "github": "https://github.com/roliver97/ApiRest_P06",
+    "github": "https://github.com/roliver97/P06_ApiRest",
     "category": "node.js",
     "architecture": "Backend"
   },
@@ -101,7 +101,7 @@
     "description": "Single Page Application (SPA) featuring classic arcade minigames with dynamic state, scoring, and modular components",
     "image": "images/projects/gamehub.png",
     "url": "https://game-hub-p05.vercel.app",
-    "github": "https://github.com/roliver97/GameHub_P05",
+    "github": "https://github.com/roliver97/P05_GameHub",
     "category": "vanilla",
     "architecture": "Frontend"
   },
@@ -111,7 +111,7 @@
     "description": "Personal portfolio website demonstrating projects, skills, and contact options",
     "image": "images/projects/portfolio.png",
     "url": "scrollToTop",
-    "github": "https://github.com/roliver97/Portfolio_P04",
+    "github": "https://github.com/roliver97/P04_Portfolio",
     "category": "vanilla",
     "architecture": "Frontend"
   },
@@ -121,7 +121,7 @@
     "description": "Pinterest-style gallery fetching images asynchronously from an API with vanilla JS",
     "image": "images/projects/async_pinterest.png",
     "url": "https://pinterest-async-p03.vercel.app/",
-    "github": "https://github.com/roliver97/PinterestAsync_P03",
+    "github": "https://github.com/roliver97/P03_PinterestAsync",
     "category": "vanilla",
     "architecture": "Basic UI Prototype"
   },
@@ -131,7 +131,7 @@
     "description": "Interactive e-commerce site with product filtering functionality using JavaScript",
     "image": "images/projects/filter_shop.png",
     "url": "https://filter-shop-p02.vercel.app/",
-    "github": "https://github.com/roliver97/FilterShop_P02",
+    "github": "https://github.com/roliver97/P02_FilterShop",
     "category": "vanilla",
     "architecture": "Basic UI Prototype"
   },
@@ -141,7 +141,7 @@
     "description": "Responsive landing page built with HTML & CSS, showcasing a product or service",
     "image": "images/projects/landing_page.png",
     "url": "https://landing-page-p01.vercel.app/",
-    "github": "https://github.com/roliver97/LandingPage_P01",
+    "github": "https://github.com/roliver97/P01_LandingPage",
     "category": "vanilla",
     "architecture": "Basic UI Prototype"
   }
